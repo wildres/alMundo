@@ -43,7 +43,7 @@ public class AtenderLlamadaTest {
     @Test
     public void asignarLlamadaTest() {
         Dispatcher dispatcher = new Dispatcher();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 10; i++) {
             Llamada llamada = new Llamada();
             llamada.setId(Integer.valueOf(i).longValue());
             dispatcher.dispatchCall(llamada);
@@ -51,7 +51,23 @@ public class AtenderLlamadaTest {
         try {
             dispatcher.monitorearResultados();
         } catch (Exception ex) {
-            System.out.println("no esprado");
+            fail("Error "+ex.getMessage());
+        }
+
+    }
+    
+      @Test
+    public void asignarLlamadaTest() {
+        Dispatcher dispatcher = new Dispatcher();
+        for (int i = 0; i < 20; i++) {
+            Llamada llamada = new Llamada();
+            llamada.setId(Integer.valueOf(i).longValue());
+            dispatcher.dispatchCall(llamada);
+        }
+        try {
+            dispatcher.monitorearResultados();
+        } catch (Exception ex) {
+            fail("Error "+ex.getMessage());
         }
 
     }

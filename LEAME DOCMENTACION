@@ -1,1 +1,15 @@
+Extra/Plus
+
+1.  En los casos cuando no hay ningun empleado disponible las llamadas se pondran en un objeto de tipo (cola) para ser atendidas
+    en el orden que van entrando por el primer empleado que se encuentre disponible (cuando el empleado se libera atiende la
+    primera llava que este en la cabeza de la cola), se adiciona un tiempo m'aximo de espera
+    para preguntar si se quiere seguir esperando la llamada a traves del hilo que esta en esa ejecuci[on.
+    
+2.  Para el manejo de los hilos se implementa la interface ExecutorService que se encuentra en el paquete java.util, esta 
+    permite manejar los hilos de una forma mas sencilla y con menos cantidad de codigo pues esta misma se encarga de manejar
+    los hilos seg[un la implementacion que le demos entonces le decimos cuantos hilos queremos manjear al tiempo en este caso (10)
+    y cuando lleguen mas de 10 llamadas este las encola y esperar hasta que uno de los 10 hilos haya terminado para lanzar el siguiente hilo.
+    de este forma se controla la concurrencia de las llamadas.
+    
+
 
